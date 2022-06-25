@@ -18,7 +18,6 @@ module.exports = function (app) {
       !/[a-i]/i.test(row) ||
       !/[1-9]/i.test(column)
     ) {
-      console.log("invalid coordinate :>> ");
       res.json({ error: "Invalid coordinate" });
       return;
     }

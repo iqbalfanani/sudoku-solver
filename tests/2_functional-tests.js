@@ -197,7 +197,7 @@ suite("Functional Tests", () => {
     chai
       .request(server)
       .post("/api/check")
-      .send({ puzzle: validPuzzle, coordinate: "A2", value: "g" })
+      .send({ puzzle: validPuzzle, coordinate: "A1", value: "g" })
       .end(function (err, res) {
         assert.equal(res.status, 200);
         assert.equal(res.body.error, "Invalid value");

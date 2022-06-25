@@ -199,7 +199,7 @@ suite("Functional Tests", () => {
       .post("/api/check")
       .send({ puzzle: validPuzzle, coordinate: "A1", value: "g" })
       .end(function (err, res) {
-        assert.equal(res.status, 200);
+        assert.equal(res.status, 300);
         assert.equal(res.body.error, "Invalid value");
         done();
       });

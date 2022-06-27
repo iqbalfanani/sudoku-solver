@@ -21,16 +21,16 @@ module.exports = function (app) {
       res.json({ error: "Invalid coordinate" });
       return;
     }
-    if (!/[1-9]/i.test(value)) {
-      res.json({ error: "Invalid value" });
-      return;
-    }
     if (puzzle.length != 81) {
       res.json({ error: "Expected puzzle to be 81 characters long" });
       return;
     }
     if (/[^0-9.]/g.test(puzzle)) {
       res.json({ error: "Invalid characters in puzzle" });
+      return;
+    }
+    if (!/[1-9]/i.test(value)) {
+      res.json({ error: "Invalid value" });
       return;
     }
     let validCol = solver.checkColPlacement(puzzle, row, column, value);
